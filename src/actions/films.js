@@ -2,6 +2,8 @@ import {
   FETCH_FILMS_REQUEST,
   SET_FILMS,
   GET_FILMS,
+  SAVE_FILM,
+  ADD_FILM,
 } from './constants/films';
 
 export const fetchFilms = payload => ({
@@ -16,5 +18,15 @@ export const setFilms = payload => ({
 
 export const getFilms = payload => ({
   type: GET_FILMS,
+  payload,
+});
+
+export const saveFilm = payload => ({
+  type: SAVE_FILM,
+  payload,
+});
+
+export const addFilm = payload => ({
+  type: ADD_FILM,
   payload,
 });

@@ -13,25 +13,38 @@ import {
 
 import FilmsPage from './FilmsPage';
 import FilmPage from './FilmPage';
+import EditorPage from './EditorPage';
 
-const getCurrentId = (path) => {
-  const currentId = Number(path.split('/')
-    .filter(item => item !== '')
-    .pop());
+const getCurrentPath = (path) => {
+  const pathArr = path.split('/').filter(item => item !== '');
+  const currentId = Number(pathArr.pop());
   const isNum = !Number.isNaN(currentId);
+  const route = pathArr.pop();
 
-  return isNum ? currentId : 0;
+  return {
+    currentId: isNum ? currentId : 0,
+    route,
+  };
 };
 
 const mapStateToProps = (state, props) => {
   const films = getFilmsSelector(state);
   const { paginate } = state.films;
-  const currentId = getCurrentId(props.location.pathname);
+  const { currentId, route } = getCurrentPath(props.location.pathname);
+  let slide = 1;
+
+  if (route === 'add' || route === 'edit') {
+    slide = 0;
+  } else if (currentId) {
+    slide = 2;
+  }
 
   return {
     films,
     paginate,
+    slide,
     currentId,
+    history: props.history,
   };
 };
 
@@ -44,7 +57,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default class HomePage extends PureComponent {
   static propTypes = {
     films: PropTypes.arrayOf(PropTypes.object).isRequired,
-    currentId: PropTypes.number.isRequired,
+    slide: PropTypes.number.isRequired,
     paginate: PropTypes.shape({
       page: PropTypes.number,
       limit: PropTypes.number,
@@ -76,8 +89,7 @@ export default class HomePage extends PureComponent {
   }
 
   render() {
-    const { currentId } = this.props;
-    const slide = currentId ? 1 : 0;
+    const { slide } = this.props;
 
     return (
       <SwipeableViews
@@ -86,6 +98,7 @@ export default class HomePage extends PureComponent {
         springConfig={HomePage.springConfigStyle}
         onChangeIndex={this.handleChangeIndex}
       >
+        <EditorPage {...this.props} />
         <FilmsPage {...this.props} />
         <FilmPage {...this.props} />
       </SwipeableViews>

@@ -7,19 +7,15 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchFilms,
 } from '_actions/films';
-import getInfoFilm from '_utils/film';
 import FilmAbout from './FilmAbout';
 import FilmInfo from './FilmInfo';
 
 const mapStateToProps = ({ films }, { currentId }) => {
   const film = films.byId[currentId];
   const id = currentId;
-  const info = film ? getInfoFilm(film) : {};
-
   return {
     film,
     id,
-    info,
   };
 };
 
@@ -27,7 +23,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({ fetchFilms }, dispat
 
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
-export default class ShowContainer extends Component {
+export default class FilmContainer extends Component {
   static propTypes = {
     fetchFilms: PropTypes.func.isRequired,
     film: PropTypes.shape({

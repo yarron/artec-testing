@@ -1,6 +1,8 @@
 import {
   SET_FILMS,
   GET_FILMS,
+  SAVE_FILM,
+  ADD_FILM,
 } from '_actions/constants/films';
 
 const initialState = {
@@ -38,7 +40,34 @@ const films = (state = initialState, action) => {
         },
         allIds: [...new Set([...state.allIds, ...payload.allIds])],
       };
+    case SAVE_FILM: {
+      const { id } = payload;
 
+      return {
+        ...state,
+        byId: {
+          ...state.byId,
+          [id]: {
+            ...payload,
+          },
+        },
+        allIds: [...new Set([id, ...state.allIds])],
+      };
+    }
+    case ADD_FILM: {
+      const { id } = payload;
+
+      return {
+        ...state,
+        byId: {
+          ...state.byId,
+          [id]: {
+            ...payload,
+          },
+        },
+        allIds: [...new Set([payload.id, ...state.allIds])],
+      };
+    }
     default:
       return state;
   }

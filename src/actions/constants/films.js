@@ -4,3 +4,6 @@ export const FETCH_FILMS_FAILURE = 'FETCH_FILMS_FAILURE';
 
 export const SET_FILMS = 'SET_FILMS';
 export const GET_FILMS = 'GET_FILMS';
+
+export const SAVE_FILM = 'SAVE_FILM';
+export const ADD_FILM = 'ADD_FILM';

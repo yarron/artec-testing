@@ -21,6 +21,10 @@ export default class FilmsPage extends Component {
       count: PropTypes.number,
       visible: PropTypes.number,
     }).isRequired,
+    slide: PropTypes.number.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }).isRequired,
   };
 
   static defaultProps = {
@@ -32,7 +36,7 @@ export default class FilmsPage extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.currentId === this.props.currentId;
+    return nextProps.currentId === this.props.currentId || !this.props.slide;
   }
 
   componentWillUnmount() {
@@ -64,6 +68,12 @@ export default class FilmsPage extends Component {
     this.container = node;
   }
 
+  handleAdd = () => {
+    const { history } = this.props;
+
+    history.push('/films/add/0');
+  }
+
   render() {
     const { films, paginate: { visible, limit } } = this.props;
 
@@ -75,9 +85,10 @@ export default class FilmsPage extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-lg-6">
-                <div styleName="description">Description header
-                </div>
                 <h3>Films list</h3>
+                <div>
+                  <button styleName="btn-add" onClick={this.handleAdd}>Добавить</button>
+                </div>
               </div>
             </div>
 
