@@ -51,11 +51,18 @@ export default class EditorFields extends PureComponent {
   }
 
   handleSave = () => {
-    const { history, saveFilm } = this.props;
+    const { history, saveFilm, film } = this.props;
+
+    let { id } = film;
+
+    if (!id) {
+      id = Date.now();
+    }
 
     saveFilm({
-      ...this.props.film,
+      ...film,
       ...this.state,
+      id,
     });
 
     history.push('/films');
@@ -103,7 +110,7 @@ export default class EditorFields extends PureComponent {
             <InputText
               name="year"
               title="Год"
-              value={String(this.state.year)}
+              value={String(this.state.year) || ''}
               handleChange={this.handleChange}
             />
             <InputTime

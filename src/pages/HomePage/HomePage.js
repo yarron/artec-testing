@@ -44,6 +44,7 @@ const mapStateToProps = (state, props) => {
     paginate,
     slide,
     currentId,
+    history: props.history,
   };
 };
 

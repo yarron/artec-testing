@@ -20,7 +20,7 @@ export default [
     component: HomePage,
   },
   {
-    path: '/films/add/',
+    path: '/films/add/:id',
     component: HomePage,
   },
   {

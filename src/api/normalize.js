@@ -1,3 +1,30 @@
+const getEmptyFilm = {
+  id: 0,
+  duration: '',
+  plot: '',
+  content_type: 'films',
+  content_type_name: 'Фильм',
+  title: '',
+  img: '',
+  year: '',
+  rate_amount_str: '',
+  yearTitle: 'Год выпуска',
+  directorTitle: 'Режиссеры',
+  durationTitle: 'Продолжительность',
+  genresTitle: 'Жанры',
+  actorsTitle: 'Актеры',
+  countriesTitle: 'Страны',
+  ratingImdbTitle: 'Райтинг IMDB',
+  ratingKinopoiskTitle: 'Райтинг kinopoisk',
+  actors: '',
+  genres: '',
+  directors: '',
+  ratingImdb: 0,
+  ratingKinopoisk: 0,
+  countriesStr: '',
+  isInvalid: true,
+};
+
 const getInfoFilm = (film) => {
   const {
     categories,
@@ -85,6 +112,10 @@ const normalizeFilms = (data, paginate, photo) => {
       allIds.push(film.id);
       byId[film.id] = film;
     });
+
+    const empty = getEmptyFilm;
+    allIds.push(empty.id);
+    byId[empty.id] = empty;
   } else {
     byId[data.id] = data;
     allIds.push(data.id);
