@@ -22,7 +22,9 @@ const getEmptyFilm = {
   ratingImdb: 0,
   ratingKinopoisk: 0,
   countriesStr: '',
-  isInvalid: true,
+  isInvalid_title: true,
+  isInvalid_img: true,
+  isInvalid_plot: true,
 };
 
 const getInfoFilm = (film) => {

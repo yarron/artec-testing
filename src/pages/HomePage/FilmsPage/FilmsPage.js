@@ -87,7 +87,7 @@ export default class FilmsPage extends Component {
               <div className="col-12 col-lg-6">
                 <h3>Films list</h3>
                 <div>
-                  <button onClick={this.handleAdd}>Добавить</button>
+                  <button styleName="btn-add" onClick={this.handleAdd}>Добавить</button>
                 </div>
               </div>
             </div>

@@ -32,7 +32,7 @@ export default class InputFile extends PureComponent {
   handleChangeUrl = ({ target }) => {
     const { name, handleChange } = this.props;
 
-    handleChange({ [name]: target.value, isInvalid: !this.getValid(target.value) });
+    handleChange({ [name]: target.value, [`isInvalid_${name}`]: !this.getValid(target.value) });
   };
 
   render() {

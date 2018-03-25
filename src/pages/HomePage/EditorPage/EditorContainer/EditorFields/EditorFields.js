@@ -42,6 +42,12 @@ export default class EditorFields extends PureComponent {
     });
   }
 
+  getInvalid() {
+    const inInvalidCount = ['isInvalid_title', 'isInvalid_img', 'isInvalid_plot']
+      .filter(name => this.state[name]).length;
+    return inInvalidCount;
+  }
+
   handleChange = state => this.setState(state);
 
   handleCancel = () => {
@@ -71,14 +77,14 @@ export default class EditorFields extends PureComponent {
   render() {
     return (
       <div styleName="root" className="container">
-        <div>
+        <div styleName="header">
           <h1>Editor</h1>
           <div>
-            <button styleName="icon-cancel" onClick={this.handleCancel}>
+            <button styleName="btn-cancel" onClick={this.handleCancel}>
               <MdSettingsBackupRestore size="24" color="#212121" />
               Назад
             </button>
-            <button disabled={this.state.isInvalid} styleName="icon-cancel" onClick={this.handleSave}>
+            <button styleName="btn-save" disabled={this.getInvalid()} onClick={this.handleSave}>
               <MdSave size="24" color="#212121" />
               Сохранить
             </button>

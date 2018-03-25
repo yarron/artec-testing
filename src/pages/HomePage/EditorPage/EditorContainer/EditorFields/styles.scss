@@ -1,7 +1,23 @@
 .root {
   padding: 0;
 
-  .icon-cancel {
+  .btn-cancel,
+  .btn-save {
     padding-right: 15px;
+    cursor: pointer;
+  }
+
+  .btn-save:disabled {
+    cursor: not-allowed;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    & > :first-child {
+      flex-grow: 1;
+    }
   }
 }
