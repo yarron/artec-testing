@@ -16,6 +16,14 @@ export default [
     component: HomePage,
   },
   {
+    path: '/films/edit/:id',
+    component: HomePage,
+  },
+  {
+    path: '/films/add/',
+    component: HomePage,
+  },
+  {
     path: '*',
     component: NotFoundPage,
   },

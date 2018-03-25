@@ -15,7 +15,6 @@ const mapStateToProps = ({ films }, { currentId }) => {
   const film = films.byId[currentId];
   const id = currentId;
   const info = film ? getInfoFilm(film) : {};
-
   return {
     film,
     id,
@@ -27,7 +26,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({ fetchFilms }, dispat
 
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
-export default class ShowContainer extends Component {
+export default class FilmContainer extends Component {
   static propTypes = {
     fetchFilms: PropTypes.func.isRequired,
     film: PropTypes.shape({

@@ -35,13 +35,17 @@ const getInfoFilm = (film) => {
   const ratingImdb = ratings && ratings.imdb
     ? Number(ratings.imdb)
     : 0;
+
   const ratingKinopoisk = ratings && ratings.kinopoisk
     ? Number(ratings.kinopoisk)
     : 0;
+
   const yearTitle = 'Год выпуска';
   const durationTitle = 'Продолжительность';
   const previewTitle = 'Preview';
   const preview = '-'; // film.img source not valid
+  const ratingImdbTitle = 'Райтинг IMDB';
+  const ratingKinopoiskTitle = 'Райтинг kinopoisk';
 
   return {
     yearTitle,
@@ -51,6 +55,8 @@ const getInfoFilm = (film) => {
     genresTitle,
     actorsTitle,
     countriesTitle,
+    ratingImdbTitle,
+    ratingKinopoiskTitle,
     actors,
     genres,
     directors,

@@ -75,9 +75,10 @@ export default class FilmsPage extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-lg-6">
-                <div styleName="description">Description header
-                </div>
                 <h3>Films list</h3>
+                <div>
+                  <button>Добавить</button>
+                </div>
               </div>
             </div>
 

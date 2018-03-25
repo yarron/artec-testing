@@ -1,13 +1,11 @@
-import Photo from '_assets/images/no_image.jpg';
-
-const normalizeFilms = (data, paginate) => {
+const normalizeFilms = (data, paginate, photo) => {
   const byId = {};
   const allIds = [];
 
   if (Array.isArray(data)) {
     data.forEach((item) => {
       const film = item;
-      film.img = Photo;
+      film.img = photo;
       allIds.push(film.id);
       byId[film.id] = film;
     });

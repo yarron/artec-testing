@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import { withRouter } from 'react-router-dom';
+import { MdEdit } from 'react-icons/lib/md/';
 
 import getInfoFilm from '_utils/film';
 import styles from './styles.scss';
@@ -25,6 +26,14 @@ export default class FilmsItem extends PureComponent {
     history.push(`/films/${id}`);
   }
 
+  handleEdit = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const { film: { id }, history } = this.props;
+    history.push(`/films/edit/${id}`);
+  }
+
   render() {
     const { film } = this.props;
     const data = getInfoFilm(film);
@@ -34,6 +43,9 @@ export default class FilmsItem extends PureComponent {
         <article styleName="thumb">
           <a href="/" onClick={this.handleChangeSlide}>
             <header>
+              <button styleName="icon-edit" onClick={this.handleEdit}>
+                <MdEdit size="24" color="#212121" />
+              </button>
               <div styleName="image-wrap">
                 <img src={film.img} alt={data.title} />
               </div>
