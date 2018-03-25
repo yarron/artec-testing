@@ -6,7 +6,7 @@ const getInfoFilm = (film) => {
     title,
     year,
     ratings,
-    countries: countriesObj,
+    countries,
   } = film;
 
   const genresTitle = categories.title || '-';
@@ -14,9 +14,9 @@ const getInfoFilm = (film) => {
     ? categories.list.map(item => item.name).join(', ')
     : '';
 
-  const countriesTitle = countriesObj.title || '-';
-  const countries = countriesObj.list
-    ? countriesObj.list.map(item => item.name).join(', ')
+  const countriesTitle = countries.title || '-';
+  const countriesStr = countries.list
+    ? countries.list.map(item => item.name).join(', ')
     : '';
 
   const directorTitle = collectives && collectives[0]
@@ -66,7 +66,7 @@ const getInfoFilm = (film) => {
     preview,
     ratingImdb,
     ratingKinopoisk,
-    countries,
+    countriesStr,
   };
 };
 

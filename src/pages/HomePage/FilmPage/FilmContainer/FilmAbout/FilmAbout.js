@@ -10,11 +10,10 @@ export default class FilmAbout extends PureComponent {
     film: PropTypes.shape({
       id: PropTypes.number,
     }).isRequired,
-    info: PropTypes.shape({}).isRequired,
   };
 
   render() {
-    const { film, info } = this.props;
+    const { film } = this.props;
 
     return (
       <div styleName="root" className="container">
@@ -32,9 +31,9 @@ export default class FilmAbout extends PureComponent {
                 size={15}
                 color1="#f2f2f2"
                 color2="#ff7c31"
-                value={info.ratingImdb}
+                value={film.ratingImdb}
               />
-              <span>{info.ratingImdb} / 10</span>
+              <span>{film.ratingImdb} / 10</span>
             </div>
             <div styleName="rating">
               <span>Kinopoisk</span>
@@ -44,9 +43,9 @@ export default class FilmAbout extends PureComponent {
                 size={15}
                 color1="#f2f2f2"
                 color2="#ff7c31"
-                value={info.ratingKinopoisk}
+                value={film.ratingKinopoisk}
               />
-              <span>{info.ratingKinopoisk} / 10</span>
+              <span>{film.ratingKinopoisk} / 10</span>
             </div>
             <div styleName="rating">
               <span>Rate Amount</span>

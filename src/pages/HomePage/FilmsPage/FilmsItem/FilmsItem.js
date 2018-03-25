@@ -4,7 +4,6 @@ import CSSModules from 'react-css-modules';
 import { withRouter } from 'react-router-dom';
 import { MdEdit } from 'react-icons/lib/md/';
 
-import getInfoFilm from '_utils/film';
 import styles from './styles.scss';
 
 @withRouter
@@ -36,7 +35,7 @@ export default class FilmsItem extends PureComponent {
 
   render() {
     const { film } = this.props;
-    const data = getInfoFilm(film);
+    const data = film;
 
     return (
       <div styleName="root" className="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-3">

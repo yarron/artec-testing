@@ -6,12 +6,12 @@ import styles from './styles.scss';
 @CSSModules(styles, { allowMultiple: true })
 export default class FilmInfo extends PureComponent {
   static propTypes = {
-    info: PropTypes.shape({}).isRequired,
+    film: PropTypes.shape({}).isRequired,
   };
 
   render() {
     const {
-      info,
+      film,
     } = this.props;
 
     return (
@@ -22,20 +22,20 @@ export default class FilmInfo extends PureComponent {
             <div className="row">
               <div className="col-6 col-sm-12">
                 <div className="row align-items-center" styleName="border">
-                  <div className="col-12 col-sm-4">{info.genresTitle}</div>
-                  <div className="col-12 col-sm-8 text-muted">{info.genres}</div>
+                  <div className="col-12 col-sm-4">{film.genresTitle}</div>
+                  <div className="col-12 col-sm-8 text-muted">{film.genres}</div>
                 </div>
               </div>
               <div className="col-6 col-sm-12">
                 <div className="row align-items-center" styleName="border">
-                  <div className="col-12 col-sm-4">{info.durationTitle}</div>
-                  <div className="col-12 col-sm-8 text-muted">{info.duration}</div>
+                  <div className="col-12 col-sm-4">{film.durationTitle}</div>
+                  <div className="col-12 col-sm-8 text-muted">{film.duration}</div>
                 </div>
               </div>
               <div className="col-6 col-sm-12">
                 <div className="row align-items-center" styleName="border">
-                  <div className="col-12 col-sm-4">{info.yearTitle}</div>
-                  <div className="col-12 col-sm-8 text-muted">{info.year}</div>
+                  <div className="col-12 col-sm-4">{film.yearTitle}</div>
+                  <div className="col-12 col-sm-8 text-muted">{film.year}</div>
                 </div>
               </div>
             </div>
@@ -44,20 +44,20 @@ export default class FilmInfo extends PureComponent {
             <div className="row">
               <div className="col-6 col-sm-12">
                 <div className="row align-items-center" styleName="border">
-                  <div className="col-12 col-sm-4">{info.actorsTitle}</div>
-                  <div className="col-12 col-sm-8 text-muted">{info.actors}</div>
+                  <div className="col-12 col-sm-4">{film.actorsTitle}</div>
+                  <div className="col-12 col-sm-8 text-muted">{film.actors}</div>
                 </div>
               </div>
               <div className="col-6 col-sm-12">
                 <div className="row align-items-center" styleName="border">
-                  <div className="col-12 col-sm-4">{info.countriesTitle}</div>
-                  <div className="col-12 col-sm-8 text-muted">{info.countries}</div>
+                  <div className="col-12 col-sm-4">{film.countriesTitle}</div>
+                  <div className="col-12 col-sm-8 text-muted">{film.countriesStr}</div>
                 </div>
               </div>
               <div className="col-6 col-sm-12">
                 <div className="row align-items-center" styleName="border">
-                  <div className="col-12 col-sm-4">{info.directorTitle}</div>
-                  <div className="col-12 col-sm-8 text-muted">{info.directors}</div>
+                  <div className="col-12 col-sm-4">{film.directorTitle}</div>
+                  <div className="col-12 col-sm-8 text-muted">{film.directors}</div>
                 </div>
               </div>
             </div>

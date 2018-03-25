@@ -21,6 +21,7 @@ export default class FilmsPage extends Component {
       count: PropTypes.number,
       visible: PropTypes.number,
     }).isRequired,
+    slide: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
@@ -32,7 +33,7 @@ export default class FilmsPage extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.currentId === this.props.currentId;
+    return nextProps.currentId === this.props.currentId || !this.props.slide;
   }
 
   componentWillUnmount() {

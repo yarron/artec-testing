@@ -7,18 +7,15 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchFilms,
 } from '_actions/films';
-import getInfoFilm from '_utils/film';
 import FilmAbout from './FilmAbout';
 import FilmInfo from './FilmInfo';
 
 const mapStateToProps = ({ films }, { currentId }) => {
   const film = films.byId[currentId];
   const id = currentId;
-  const info = film ? getInfoFilm(film) : {};
   return {
     film,
     id,
-    info,
   };
 };
 
