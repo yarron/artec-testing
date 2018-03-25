@@ -62,7 +62,10 @@ export default class EditorContainer extends Component {
   render() {
     return (
       <div className="container">
-        Editor
+        <div>
+          <h1>Editor</h1>
+          <div>Buttons</div>
+        </div>
         <div className="row">
           <div className="col-12 col-sm-6">
             <InputText
@@ -70,18 +73,21 @@ export default class EditorContainer extends Component {
               title="Заголовок"
               value={this.state.title}
               handleChange={this.handleChange}
+              isRequired
             />
             <InputFile
               name="img"
               title="Картинка"
               value={this.state.img}
               handleChange={this.handleChange}
+              isRequired
             />
             <InputTextarea
               name="plot"
               title="Описание"
               value={this.state.plot}
               handleChange={this.handleChange}
+              isRequired
             />
             <InputText
               name="year"
