@@ -1,0 +1,21 @@
+@import '~assets/styles/variables';
+
+.root {
+  .thumb-starring {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+
+    img {
+      width: 50px;
+    }
+  }
+
+  .border {
+    border-bottom: 1px solid $color-border-info;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 61px;
+  }
+}

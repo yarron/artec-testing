@@ -1,0 +1,85 @@
+@import '~assets/styles/variables.scss';
+
+.preloader {
+  display: block;
+  height: $size-preloader;
+  width: $size-preloader;
+  animation: loader_2_1 3s linear infinite;
+  margin: 10px auto;
+
+  span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: $size-preloader;
+    width: $size-preloader;
+    clip: rect($size-preloader / 2, $size-preloader, $size-preloader, 0);
+    animation: loader_2_2 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: $size-preloader;
+      width: $size-preloader;
+      border: 3px solid transparent;
+      border-top: 3px solid $color-preloader;
+      border-radius: 50%;
+      animation: loader_2_3 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: $size-preloader;
+      width: $size-preloader;
+      border: 3px solid $color-preloader;
+      border-radius: 50%;
+    }
+  }
+}
+
+@keyframes loader_2_1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader_2_2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader_2_3 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,17 @@
+
+@import '~assets/styles/variables';
+
+.root {
+  margin-top: -300px;
+  z-index: 2;
+  position: relative;
+
+  .description {
+    margin-bottom: 75px;
+    color: $color-dark-gray;
+  }
+
+  h3 {
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,12 @@
+@import '~assets/styles/variables';
+
+.root {
+  background-color: $bg-home-page;
+
+  .film-page {
+    position: relative;
+    margin-top: -300px;
+    margin-bottom: 30px;
+    z-index: 2;
+  }
+}

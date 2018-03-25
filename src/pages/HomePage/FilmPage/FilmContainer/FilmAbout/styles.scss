@@ -1,0 +1,27 @@
+@import '~assets/styles/variables';
+
+.root {
+  padding: 0;
+  margin-bottom: 50px;
+
+  .image {
+    background-color: $color-white;
+    padding: 5px;
+    display: inline-block;
+
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      height: 441px;
+    }
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+
+  .description {
+    margin-top: 20px;
+  }
+}
