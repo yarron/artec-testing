@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import { MdSettingsBackupRestore, MdSave } from 'react-icons/lib/md/';
 import { withRouter } from 'react-router-dom';
@@ -13,7 +13,7 @@ import styles from './styles.scss';
 
 @withRouter
 @CSSModules(styles, { allowMultiple: true })
-export default class EditorFields extends PureComponent {
+export default class EditorFields extends Component {
   static propTypes = {
     film: PropTypes.shape({
       id: PropTypes.number,
@@ -164,7 +164,7 @@ export default class EditorFields extends PureComponent {
               handleChange={this.handleChange}
             />
             <InputText
-              name="ratingKinopoisk"
+              name="rate_amount_str"
               title="Rate amount"
               value={this.state.rate_amount_str}
               handleChange={this.handleChange}
