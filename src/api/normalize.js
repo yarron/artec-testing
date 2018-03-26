@@ -106,6 +106,10 @@ const normalizeFilms = (data, paginate, photo) => {
         ...getInfoFilm(item),
       };
       film.img = photo;
+      film.isInvalid_title = false;
+      film.isInvalid_img = false;
+      film.isInvalid_plot = false;
+
       delete film.countries;
       delete film.categories;
       delete film.collectives;
