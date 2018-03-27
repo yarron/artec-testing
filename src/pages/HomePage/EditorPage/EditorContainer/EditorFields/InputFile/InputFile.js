@@ -26,7 +26,7 @@ export default class InputFile extends PureComponent {
   handleChange = ({ target }) => {
     const { name, handleChange } = this.props;
 
-    handleChange({ [name]: URL.createObjectURL(target.files[0]) });
+    handleChange({ [name]: URL.createObjectURL(target.files[0]), [`isInvalid_${name}`]: !this.getValid(target.value) });
   };
 
   handleChangeUrl = ({ target }) => {
